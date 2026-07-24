@@ -3,30 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cauchos Express</title>
+    <title>Cauchos Express - Venta y Servicios de Cauchos</title>
+    <!-- Estilos de diseño -->
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f9;
-            padding: 50px;
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        h1 { color: #2c3e50; }
-        p { color: #555; font-size: 18px; }
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        header p {
+            color: #bdc3c7;
+            font-size: 1.1rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
         .card {
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3498db;
             display: inline-block;
+            padding-bottom: 5px;
+        }
+        ul.services {
+            list-style: none;
+        }
+        ul.services li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 1.05rem;
+        }
+        ul.services li:last-child {
+            border-bottom: none;
+        }
+        /* Botones de acción */
+        .btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+        .btn-whatsapp:hover {
+            background-color: #1ebc57;
+        }
+        .btn-call {
+            background-color: #2980b9;
+            color: white;
+        }
+        .btn-call:hover {
+            background-color: #21618c;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>¡Bienvenidos a Cauchos Express! 🚗</h1>
-        <p>Nuestra página web ya está en línea y 100% gratis.</p>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>🏎️ Cauchos Express</h1>
+        <p>Venta de cauchos,bujes y todo lo que tenga que ver en amortiguadorrs para tu vehiculo</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Sección de Contacto Rápido -->
+        <div class="card">
+            <h2>Atención Inmediata</h2>
+            <p style="margin-bottom: 15px;">¿Necesitas cotizar cauchos o solicitar asistencia? Contáctanos directamente:</p>
+            
+            <!-- CAMBIA EL NÚMERO AQUÍ (incluye código de país, ej: 57 para Colombia) -->
+            <a href="https://wa.me/573222205403?text=Hola,%20quisiera%20cotizar%20cauchos y bujes%20para%20amortiguadorrees en%Cauchos%Express" 
+               target="_blank" 
+               class="btn btn-whatsapp">
+                💬 Escribir por WhatsApp
+            </a> 3222205403
+
+            <!-- CAMBIA EL NÚMERO AQUÍ PARA LLAMADAS DIRECTAS -->
+            <a href="tel:+573222205403" class="btn btn-call">
+                📞 Llamar Directamente
+            </a>
+        </div>
+
+        <!-- Sección de Servicios -->
+        <div class="card">
+            <h2>Nuestros Servicios</h2>
+            <ul class="services">
+                <li>🛞 Venta de cauchos/amortiguadores (nuevos)</li>
+                <li> entregas a nivel bogota y nacional </li>
+                
+                
+            </ul>
+        </div>
+
+        <!-- Ubicación y Horarios -->
+        <div class="card">
+            <h2>Ubicación y Horarios</h2> 8am-6pm
+            <p>📍 <strong>Dirección:</strong> Carrera 69k#69-23 (bogota dc)</p>
+            <p style="margin-top: 10px;">🕒 <strong>Horario de atención:</strong></p>
+            <p>Lunes a Sábado: 8:00 AM - 6:00 PM</p>
+        </div>
+
     </div>
+
+    <footer>
+        <p>&copy; 2026 Cauchos Express. Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 </html>
