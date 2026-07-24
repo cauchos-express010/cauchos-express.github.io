@@ -3,95 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cauchos Express - Venta y Servicios de Cauchos</title>
-    <!-- Estilos de diseño -->
+    <title>Cauchos Express - Catálogo Oficial</title>
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, sans-serif;
         }
+
         body {
-            background-color: #f4f6f9;
+            background-color: #f8f9fa;
             color: #333;
             line-height: 1.6;
         }
+
+        /* Encabezado Principal */
         header {
-            background-color: #1a252f;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
             color: white;
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
+
         header h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             margin-bottom: 10px;
+            color: #f59e0b;
         }
+
         header p {
-            color: #bdc3c7;
+            color: #cbd5e1;
             font-size: 1.1rem;
         }
+
         .container {
-            max-width: 800px;
-            margin: 20px auto;
+            max-width: 1000px;
+            margin: 30px auto;
             padding: 0 20px;
         }
-        .card {
+
+        /* Títulos de Sección */
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #1e293b;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: #f59e0b;
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Grilla del Catálogo */
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        /* Tarjeta de Producto */
+        .product-card {
             background: white;
             border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
-        h2 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #3498db;
-            display: inline-block;
-            padding-bottom: 5px;
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
-        ul.services {
-            list-style: none;
-        }
-        ul.services li {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-            font-size: 1.05rem;
-        }
-        ul.services li:last-child {
-            border-bottom: none;
-        }
-        /* Botones de acción */
-        .btn {
-            display: block;
+
+        .product-img {
             width: 100%;
-            text-align: center;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-decoration: none;
-            transition: 0.3s;
+            height: 200px;
+            object-fit: cover;
+            background-color: #e2e8f0;
         }
-        .btn-whatsapp {
+
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .product-desc {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #059669;
+            margin-bottom: 15px;
+        }
+
+        /* Botón de WhatsApp para Productos */
+        .btn-ws {
+            display: block;
+            text-align: center;
             background-color: #25D366;
             color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: background 0.2s;
         }
-        .btn-whatsapp:hover {
-            background-color: #1ebc57;
+
+        .btn-ws:hover {
+            background-color: #1ebd59;
         }
-        .btn-call {
-            background-color: #2980b9;
-            color: white;
+
+        /* Sección Informativa */
+        .info-box {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-        .btn-call:hover {
-            background-color: #21618c;
-        }
+
         footer {
             text-align: center;
-            padding: 20px;
-            color: #7f8c8d;
+            padding: 25px;
+            background: #1e293b;
+            color: #94a3b8;
             font-size: 0.9rem;
         }
     </style>
@@ -100,53 +160,71 @@
 
     <!-- Encabezado -->
     <header>
-        <h1>🏎️ Cauchos Express</h1>
-        <p>Venta de cauchos,bujes y todo lo que tenga que ver en amortiguadorrs para tu vehiculo</p>
+        <h1>🏎️ CAUCHOS EXPRESS</h1>
+        <p>Tu mejor opción en neumáticos, montaje y balanceo</p>
     </header>
 
     <div class="container">
+
+        <!-- CATÁLOGO DE PRODUCTOS -->
+        <h2 class="section-title">Catálogo de Cauchos</h2>
         
-        <!-- Sección de Contacto Rápido -->
-        <div class="card">
-            <h2>Atención Inmediata</h2>
-            <p style="margin-bottom: 15px;">¿Necesitas cotizar cauchos o solicitar asistencia? Contáctanos directamente:</p>
-            
-            <!-- CAMBIA EL NÚMERO AQUÍ (incluye código de país, ej: 57 para Colombia) -->
-            <a href="https://wa.me/573222205403?text=Hola,%20quisiera%20cotizar%20cauchos y bujes%20para%20amortiguadorrees en%Cauchos%Express" 
-               target="_blank" 
-               class="btn btn-whatsapp">
-                💬 Escribir por WhatsApp
-            </a> 3222205403
+        <div class="catalog-grid">
 
-            <!-- CAMBIA EL NÚMERO AQUÍ PARA LLAMADAS DIRECTAS -->
-            <a href="tel:+573222205403" class="btn btn-call">
-                📞 Llamar Directamente
-            </a>
+            <!-- PRODUCTO 1 -->
+            <div class="product-card">
+                <!-- Puedes cambiar el enlace de la foto por uno propio -->
+                <img src="https://images.unsplash.com/photo-1578844251758-2f71da64c96f?w=500" alt="Caucho Rin 15" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Caucho 185/65 R15</h3>
+                    <p class="product-desc">Ideal para vehículos sedán. Excelente agarre en pavimento mojado y alta durabilidad.</p>
+                    <div class="product-price">$45.00</div>
+                    <a href="https://wa.me/573000000000?text=Hola,%20me%20interesa%20el%20Caucho%20185/65%20R15" target="_blank" class="btn-ws">
+                        📲 Cotizar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 2 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1613214149922-f1809c99b414?w=500" alt="Caucho Rin 16" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Caucho 205/55 R16</h3>
+                    <p class="product-desc">Diseño deportivo de alto rendimiento. Conducción suave y silenciosa en carretera.</p>
+                    <div class="product-price">$60.00</div>
+                    <a href="https://wa.me/573000000000?text=Hola,%20me%20interesa%20el%20Caucho%20205/55%20R16" target="_blank" class="btn-ws">
+                        📲 Cotizar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 3 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1543465077-db45d34b88a5?w=500" alt="Caucho Camioneta" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Caucho 265/70 R17 (All Terrain)</h3>
+                    <p class="product-desc">Para camionetas y 4x4. Máxima tracción en todo tipo de terreno (barro, tierra y asfalto).</p>
+                    <div class="product-price">$110.00</div>
+                    <a href="https://wa.me/573000000000?text=Hola,%20me%20interesa%20el%20Caucho%20265/70%20R17" target="_blank" class="btn-ws">
+                        📲 Cotizar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
         </div>
 
-        <!-- Sección de Servicios -->
-        <div class="card">
-            <h2>Nuestros Servicios</h2>
-            <ul class="services">
-                <li>🛞 Venta de cauchos/amortiguadores (nuevos)</li>
-                <li> entregas a nivel bogota y nacional </li>
-                
-                
-            </ul>
-        </div>
-
-        <!-- Ubicación y Horarios -->
-        <div class="card">
-            <h2>Ubicación y Horarios</h2> 8am-6pm
-            <p>📍 <strong>Dirección:</strong> Carrera 69k#69-23 (bogota dc)</p>
-            <p style="margin-top: 10px;">🕒 <strong>Horario de atención:</strong></p>
-            <p>Lunes a Sábado: 8:00 AM - 6:00 PM</p>
+        <!-- INFORMACIÓN ADICIONAL -->
+        <div class="info-box">
+            <h2 class="section-title">Ubicación y Contacto</h2>
+            <p>📍 <strong>Dirección:</strong> Av. Principal de la ciudad, Edificio Cauchos Express.</p>
+            <p>🕒 <strong>Horario:</strong> Lunes a Sábado de 8:00 AM a 5:00 PM</p>
+            <p>🛠️ <strong>Servicios adicionales:</strong> Montaje, alineación 3D, balanceo y vulcanización.</p>
         </div>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 Cauchos Express. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Cauchos Express - Todos los derechos reservados.</p>
     </footer>
 
 </body>
